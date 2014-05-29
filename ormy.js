@@ -1,8 +1,36 @@
+/**
+ * Different database types instantiate different Database sub-classes.
+ */
+var classes = {
+  mysql: 'MysqlDatabase'
+};
+
+/**
+ * The main API function accepts a config and returns a database.
+ */
 var ormy = module.exports = function (config) {
-  config.type = config.type || 'mysql';
-  var capType = config.type[0].toUpperCase() + config.type.substr(1);
-  var Database = require('./lib/' + capType + 'Database');
+
+  // Validate the logger to ensure the desired methods exist.
+  var log = config.logger = config.logger || console;
+  if (
+    typeof log.error != 'function' ||
+    typeof log.warn != 'function' ||
+    typeof log.info != 'function' ||
+    typeof log.log != 'function') {
+    log.error('Database logger must have error, warn, info and log methods.');
+  }
+
+  // Validate the database type to ensure we have a class for it.
+  var type = config.type || 'mysql';
+  var className = classes[type.toLowerCase()];
+  if (!className) {
+    log.error('Unsupported database type: "' + type + '"');
+  }
+
+  // Instantiate a database of the desired type.
+  var Database = require('./lib/' + className);
   return new Database(config);
+
 };
 
 /**

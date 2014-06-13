@@ -4,7 +4,7 @@
   "keywords": [
     "ormy"
   ],
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "ormy.js",
   "homepage": "http://github.com/zerious/ormy",
   "repository": "http://github.com/zerious/ormy.git",

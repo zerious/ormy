@@ -1,7 +1,7 @@
 /**
  * Different database types instantiate different Database sub-classes.
  */
-var classes = {
+var databaseTypeClasses = {
   mysql: 'MysqlDatabase'
 };
 
@@ -17,14 +17,14 @@ var ormy = module.exports = function (config) {
     typeof log.warn != 'function' ||
     typeof log.info != 'function' ||
     typeof log.log != 'function') {
-    log.error('Database logger must have error, warn, info and log methods.');
+    throw new Error('[Ormy] Logger must have error, warn, info and log methods.');
   }
 
   // Validate the database type to ensure we have a class for it.
   var type = config.type || 'mysql';
-  var className = classes[type.toLowerCase()];
+  var className = databaseTypeClasses[type.toLowerCase()];
   if (!className) {
-    log.error('Unsupported database type: "' + type + '"');
+    throw new Error('[Ormy] Unsupported database type: "' + type + '"');
   }
 
   // Instantiate a database of the desired type.

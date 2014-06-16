@@ -4,7 +4,7 @@
   "keywords": [
     "ormy"
   ],
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "ormy.js",
   "homepage": "http://github.com/zerious/ormy",
   "repository": "http://github.com/zerious/ormy.git",
@@ -41,8 +41,8 @@
   "devDependencies": {
     "zeriousify": "0.1.5",
     "assert-plus": "0.1.5",
-    "mocha": "1.20.0",
-    "istanbul": "0.2.10",
+    "mocha": "1.20.1",
+    "istanbul": "0.2.11",
     "coveralls": "2.10.0"
   }
 }

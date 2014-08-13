@@ -1,10 +1,10 @@
 # Ormy
 
 [![NPM Version](https://badge.fury.io/js/ormy.png)](http://badge.fury.io/js/ormy)
-[![Build Status](https://travis-ci.org/zerious/ormy.png?branch=master)](https://travis-ci.org/zerious/ormy)
-[![Code Coverage](https://coveralls.io/repos/zerious/ormy/badge.png?branch=master)](https://coveralls.io/r/zerious/ormy)
-[![Dependencies](https://david-dm.org/zerious/ormy.png?theme=shields.io)](https://david-dm.org/zerious/ormy)
-[![Support](http://img.shields.io/gittip/zerious.png)](https://www.gittip.com/zerious/)
+[![Build Status](https://travis-ci.org/lighterio/ormy.png?branch=master)](https://travis-ci.org/lighterio/ormy)
+[![Code Coverage](https://coveralls.io/repos/lighterio/ormy/badge.png?branch=master)](https://coveralls.io/r/lighterio/ormy)
+[![Dependencies](https://david-dm.org/lighterio/ormy.png?theme=shields.io)](https://david-dm.org/lighterio/ormy)
+[![Support](http://img.shields.io/gittip/zerious.png)](https://www.gittip.com/lighterio/)
 
 Ormy is a Node.js Object Relational Mapping library. It currently supports
 MySQL.

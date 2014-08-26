@@ -38,7 +38,8 @@
     "coveralls": "istanbul cover ./node_modules/exam/exam.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "dependencies": {
-    "mysql": "2.4.2"
+    "mysql": "2.4.2",
+    "sqlite3": "^2.2.7"
   },
   "devDependencies": {
     "zeriousify": "0.1.9",

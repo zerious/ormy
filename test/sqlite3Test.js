@@ -27,11 +27,14 @@ describe('ormy sqlite3', function () {
     },
     nameColumn: Model.underscored,
     nameTable: Model.underscored,
-    forceSync: false,
     enableSync: false
   });
 
   it('should create table', function (done) {
+    db.sync(Mock, done);
+  });
+
+  it('should update table', function (done) {
     db.sync(Mock, done);
   });
 

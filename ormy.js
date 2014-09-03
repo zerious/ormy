@@ -2,7 +2,8 @@
  * Different database types instantiate different Database sub-classes.
  */
 var databaseTypeClasses = {
-  mysql: 'MysqlDatabase'
+  mysql: 'MysqlDatabase',
+  sqlite3: 'Sqlite3Database'
 };
 
 /**

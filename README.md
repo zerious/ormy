@@ -7,7 +7,7 @@
 [![Support](http://img.shields.io/gittip/zerious.png)](https://www.gittip.com/lighterio/)
 
 Ormy is a Node.js Object Relational Mapping library. It currently supports
-MySQL.
+MySQL and Sqlite3.
 
 ## Getting started
 

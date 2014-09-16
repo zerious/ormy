@@ -4,7 +4,7 @@
   "keywords": [
     "ormy"
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "ormy.js",
   "homepage": "http://github.com/lighterio/ormy",
   "repository": "http://github.com/lighterio/ormy.git",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "mysql": "2.4.2",
-    "sqlite3": "^2.2.7"
+    "sql.js": "0.2.9"
   },
   "devDependencies": {
     "zeriousify": "0.1.9",

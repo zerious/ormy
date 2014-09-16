@@ -1,12 +1,6 @@
 var ormy = require('../ormy');
 var Model = require('../lib/Model');
 
-var db = ormy({
-  type: 'sqlite3',
-  path: ':memory:',
-  name: 'attribution_shared'
-});
-
 describe('ormy sqlite3', function () {
   var db = ormy({
     type: 'sqlite3',
@@ -79,6 +73,7 @@ describe('ormy sqlite3', function () {
       });
     });
   });
+
   it('should remove a first record', function (done) {
     Mock.remove(1, function (err) {
       is.null(err);

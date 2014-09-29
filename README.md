@@ -1,10 +1,10 @@
-# Ormy
-
-[![NPM Version](https://badge.fury.io/js/ormy.png)](http://badge.fury.io/js/ormy)
-[![Build Status](https://travis-ci.org/lighterio/ormy.png?branch=master)](https://travis-ci.org/lighterio/ormy)
-[![Code Coverage](https://coveralls.io/repos/lighterio/ormy/badge.png?branch=master)](https://coveralls.io/r/lighterio/ormy)
-[![Dependencies](https://david-dm.org/lighterio/ormy.png?theme=shields.io)](https://david-dm.org/lighterio/ormy)
-[![Support](http://img.shields.io/gittip/zerious.png)](https://www.gittip.com/lighterio/)
+# <a href="http://lighter.io/ormy" style="font-size:40px;text-decoration:none;color:#000"><img src="https://cdn.rawgit.com/lighterio/lighter.io/master/public/ormy.svg" style="width:90px;height:90px"> Ormy</a>
+[![NPM Version](https://img.shields.io/npm/v/ormy.svg)](https://npmjs.org/package/ormy)
+[![Downloads](https://img.shields.io/npm/dm/ormy.svg)](https://npmjs.org/package/ormy)
+[![Build Status](https://img.shields.io/travis/lighterio/ormy.svg)](https://travis-ci.org/lighterio/ormy)
+[![Code Coverage](https://img.shields.io/coveralls/lighterio/ormy/master.svg)](https://coveralls.io/r/lighterio/ormy)
+[![Dependencies](https://img.shields.io/david/lighterio/ormy.svg)](https://david-dm.org/lighterio/ormy)
+[![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)
 
 Ormy is a Node.js Object Relational Mapping library. It currently supports
 MySQL and Sqlite3.
@@ -75,3 +75,9 @@ User.find({lastName: "Team"}, function (err, items) {
 
 
 ```
+
+[![NPM Version](https://img.shields.io/npm/v/ormy.svg) ![Downloads](https://img.shields.io/npm/dm/ormy.svg)](https://npmjs.org/package/ormyormy)
+[![Build Status](https://img.shields.io/travis/lighterio/ormy.svg)](https://travis-ci.org/lighterio/ormy)
+[![Code Coverage](https://img.shields.io/coveralls/lighterio/ormy/master.svg)](https://coveralls.io/r/lighterio/ormy)
+[![Dependencies](https://img.shields.io/david/lighterio/ormy.svg)](https://david-dm.org/lighterio/ormy)
+[![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)

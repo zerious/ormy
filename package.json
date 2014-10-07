@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "zeriousify": "^0.1.10",
-    "exam": "^0.0.7",
+    "exam": "^0.0.8",
     "istanbul": "0.2.11",
     "coveralls": "2.10.0"
   },

@@ -17,7 +17,7 @@ Get a new database connection.
 var db = require('ormy')(
   type: 'mysql',
   host: 'localhost'
-  port: 3306,g
+  port: 3306,
   user: 'root',
   pass: 'my_password',
   name: 'my_db'

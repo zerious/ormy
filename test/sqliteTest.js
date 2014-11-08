@@ -1,9 +1,9 @@
 var ormy = require('../ormy');
 var Model = require('../lib/Model');
 
-describe('ormy sqlite3', function () {
+describe('SQLite', function () {
   var db = ormy({
-    type: 'sqlite3',
+    type: 'sqlite',
     path: ':memory:',
     name: 'attribution_shared'
   });
@@ -41,7 +41,7 @@ describe('ormy sqlite3', function () {
       .forEach(function (key) {
         delete item[key];
       });
-      is.same(expected, item);
+      is.same(item, expected);
       done();
     });
   });

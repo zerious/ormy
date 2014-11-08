@@ -10,7 +10,7 @@
 ## TL;DR
 
 Ormy is a Node.js Object Relational Mapping library. It currently supports
-MySQL and Sqlite3.
+MySQL and SQLite.
 
 
 ## Quick Start

@@ -4,11 +4,11 @@
   "description": "Easy data models",
   "dependencies": {
     "mysql": "2.4.2",
-    "sql.js": "0.2.9"
+    "sql.js": "~0.2.10"
   },
   "devDependencies": {
     "zeriousify": "^0.1.10",
-    "exam": "^0.0.7",
+    "exam": "^0.1.5",
     "istanbul": "0.2.11",
     "coveralls": "2.10.0"
   },

@@ -50,7 +50,7 @@ describe('SQLite', function () {
   it('should get a first record', function (done) {
     var expected = { id: 1, name: 'what is this', number: 12, tiny: 1, big: 1, small: 1, big: 1, money: 10.20, enums: 'is'};
     Mock.get(1, function (err, item) {
-      is.null(err);
+      is.falsy(err);
       // delete created, modified, deleted columns since it is dynamic
       ['deleted', 'created', 'modified']
       .forEach(function (key) {
@@ -63,7 +63,7 @@ describe('SQLite', function () {
 
   it('should update a first record', function (done) {
     Mock.get(1, function (err, item) {
-      is.null(err);
+      is.falsy(err);
       var old = item.modified;
       var beforeUpdate = item;
       beforeUpdate.number = 24;
@@ -77,9 +77,9 @@ describe('SQLite', function () {
 
   it('should remove a first record', function (done) {
     Mock.remove(1, function (err) {
-      is.null(err);
+      is.falsy(err);
       Mock.get(1, function (err, item) {
-        is.null(err);
+        is.falsy(err);
         is.undefined(item);
         done();
       });

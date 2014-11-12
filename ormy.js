@@ -1,9 +1,10 @@
 /**
  * Different database types instantiate different Database sub-classes.
  */
-var databaseTypeProtoes = {
+var databaseTypes = {
   mysql: 'MysqlDatabase',
-  sqlite: 'SqliteDatabase'
+  sqlite: 'SqliteDatabase',
+  ndjson: 'NdjsonDatabase'
 };
 
 /**
@@ -12,7 +13,7 @@ var databaseTypeProtoes = {
 var ormy = module.exports = function (config) {
 
   // Validate the logger to ensure the desired methods exist.
-  var log = config.logger = config.logger || console;
+  var log = config.logger = (config.logger || console);
   if (
     typeof log.error != 'function' ||
     typeof log.warn != 'function' ||
@@ -22,10 +23,8 @@ var ormy = module.exports = function (config) {
   }
 
   // Validate the database type to ensure we have a class for it.
-  var type = (config.type || 'mysql');
-  // Don't use version numbers.
-  type = type.replace(/[\d\.]+/g, '');
-  var className = databaseTypeProtoes[type.toLowerCase()];
+  var type = (config.type || 'mysql').toLowerCase().replace(/[^a-z]+/g, '');
+  var className = databaseTypes[type];
   if (!className) {
     throw new Error('[Ormy] Unsupported database type: "' + type + '"');
   }

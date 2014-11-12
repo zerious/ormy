@@ -1,7 +1,7 @@
 /**
  * Different database types instantiate different Database sub-classes.
  */
-var databaseTypeClasses = {
+var databaseTypeProtoes = {
   mysql: 'MysqlDatabase',
   sqlite: 'SqliteDatabase'
 };
@@ -25,13 +25,13 @@ var ormy = module.exports = function (config) {
   var type = (config.type || 'mysql');
   // Don't use version numbers.
   type = type.replace(/[\d\.]+/g, '');
-  var className = databaseTypeClasses[type.toLowerCase()];
+  var className = databaseTypeProtoes[type.toLowerCase()];
   if (!className) {
     throw new Error('[Ormy] Unsupported database type: "' + type + '"');
   }
 
   // Instantiate a database of the desired type.
-  var Database = require('./lib/' + className);
+  var Database = require(__dirname + '/lib/' + className);
   return new Database(config);
 
 };
@@ -45,6 +45,6 @@ ormy._MAX_RESULTS = 1e5;
 Object.defineProperty(ormy, 'version', {
   enumerable: false,
   get: function () {
-    return require('./package.json').version;
+    return require(__dirname + '/package.json').version;
   }
 });

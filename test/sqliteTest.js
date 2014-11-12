@@ -1,5 +1,6 @@
-var ormy = require('../ormy');
-var Model = require('../lib/Model');
+var up = __dirname.replace(/[\/\\][^\/\\]+$/, '');
+var ormy = require(up + '/ormy');
+var Model = require(up + '/lib/Model');
 
 describe('SQLite', function () {
   var db = ormy({

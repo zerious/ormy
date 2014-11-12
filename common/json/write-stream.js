@@ -2,11 +2,11 @@
  * Listen to a stream's data, and emit objects.
  *
  * @origin lighter-common/common/json/write-stream.js
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 // Ensure that we can eval non-strict JSON.
-require('./scriptify');
+require(__dirname + '/scriptify');
 
 /**
  * Write non-strict JSON objects to a stream.

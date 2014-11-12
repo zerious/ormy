@@ -2,11 +2,11 @@
  * Listen to a stream's data, and emit events like "object" and "string".
  *
  * @origin lighter-common/common/json/read-stream.js
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 // Ensure that we can eval non-strict JSON.
-require('./eval');
+require(__dirname + '/eval');
 
 /**
  * Get lines from a stream, and fire events when they are parsed.

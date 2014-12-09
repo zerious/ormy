@@ -1,12 +1,19 @@
 var up = __dirname.replace(/[\/\\][^\/\\]+$/, '');
 var ormy = require(up + '/ormy');
-var Model = require(up + '/lib/Model');
+var Model = require(up + '/lib/model');
 
 describe('SQLite', function () {
+  var logger = {
+    error: mock.concat(),
+    warn: mock.concat(),
+    info: mock.concat(),
+    log: mock.concat()
+  };
   var db = ormy({
     type: 'sqlite',
     path: ':memory:',
-    name: 'attribution_shared'
+    name: 'test',
+    logger: logger
   });
   var Mock = db.define({
     table: 'mocks',

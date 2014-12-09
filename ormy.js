@@ -2,9 +2,9 @@
  * Different database types instantiate different Database sub-classes.
  */
 var databaseTypes = {
-  mysql: 'MysqlDatabase',
-  sqlite: 'SqliteDatabase',
-  ndjson: 'NdjsonDatabase'
+  mysql: 'mysql-database',
+  sqlite: 'sqlite-database',
+  ndjson: 'ndjson-database'
 };
 
 /**

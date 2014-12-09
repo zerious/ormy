@@ -3,6 +3,7 @@
  *
  * @origin lighter-common/common/json/write-stream.js
  * @version 0.0.2
+ * @import json/scriptify
  */
 
 // Ensure that we can eval non-strict JSON.

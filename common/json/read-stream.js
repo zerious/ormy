@@ -2,7 +2,8 @@
  * Listen to a stream's data, and emit events like "object" and "string".
  *
  * @origin lighter-common/common/json/read-stream.js
- * @version 0.0.2
+ * @version 0.0.3
+ * @import json/eval
  */
 
 // Ensure that we can eval non-strict JSON.
@@ -17,9 +18,9 @@ JSON.readStream = function (stream, event) {
     data += chunk;
     var end = data.indexOf('\n');
     while (end > 0) {
-      chunk = data.substr(0, end);
+      var line = data.substr(0, end);
       data = data.substr(end + 1);
-      var object = JSON.eval(chunk);
+      var object = JSON.eval(line);
       var error = JSON.eval.error;
       if (error) {
         stream.emit('error', error);

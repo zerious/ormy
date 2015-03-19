@@ -1,37 +1,49 @@
-/**
- * Different database types instantiate different Database sub-classes.
- */
-var databaseTypes = {
-  mysql: 'mysql-database',
-  sqlite: 'sqlite-database',
-  ndjson: 'ndjson-database'
-};
+var Database = require(__dirname + '/lib/Database');
+var Model = require(__dirname + '/lib/Model');
+var Field = require(__dirname + '/lib/Field');
 
 /**
- * The main API function accepts a config and returns a database.
+ * The main API function accepts a configuration and returns a database.
  */
-var ormy = module.exports = function (config) {
+var ormy = module.exports = function (config, app) {
 
-  // Validate the logger to ensure the desired methods exist.
-  var log = config.logger = (config.logger || console);
+  // Ensure there's a config.
+  config = config || {};
+
+  // Validate the log to ensure the desired methods exist.
+  var log = config.log = (config.log || console);
   if (
     typeof log.error != 'function' ||
     typeof log.warn != 'function' ||
     typeof log.info != 'function' ||
     typeof log.log != 'function') {
-    throw new Error('[Ormy] Logger must have error, warn, info and log methods.');
+    throw new Error('[Ormy] Log must have error, warn, info and log methods.');
   }
 
-  // Validate the database type to ensure we have a class for it.
-  var type = (config.type || 'mysql').toLowerCase().replace(/[^a-z]+/g, '');
-  var className = databaseTypes[type];
-  if (!className) {
-    throw new Error('[Ormy] Unsupported database type: "' + type + '"');
+  // Adapters have lowercase names like "mysql".
+  var adapter = (config.adapter || 'mysql');
+
+  var AdapterDatabase = ormy.adapters[adapter];
+  if (!AdapterDatabase) {
+    throw new Error('[Ormy] Unsupported database adapter: "' + adapter + '"');
   }
 
-  // Instantiate a database of the desired type.
-  var Database = require(__dirname + '/lib/' + className);
-  return new Database(config);
+  // Built-in adapters just have true values in the adapters collection.
+  if (AdapterDatabase === true) {
+    AdapterDatabase = require(__dirname + '/lib/' + adapter + '-database');
+  }
+
+  // Instantiate a database from the adapter.
+  var db = new AdapterDatabase(config);
+  if (app) {
+    db.app = app;
+  }
+
+  // Link to the appropriate field and model classes.
+  db.Field = db.Field || Field;
+  db.Model = db.Model || Model;
+
+  return db;
 
 };
 
@@ -39,6 +51,15 @@ var ormy = module.exports = function (config) {
  * Limit the maximum number of results that can be requested.
  */
 ormy._MAX_RESULTS = 1e5;
+
+/**
+ * Supported database adapters.
+ */
+ormy.adapters = {
+  mysql: true,
+  ringer: true,
+  sqlite: true
+};
 
 // Expose the version number, but only load package JSON if a get is performed.
 Object.defineProperty(ormy, 'version', {

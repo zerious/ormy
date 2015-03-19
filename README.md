@@ -7,26 +7,26 @@
 [![Support](https://img.shields.io/gratipay/Lighter.io.svg)](https://gratipay.com/Lighter.io/)
 
 
-## TL;DR
-
 Ormy is a Node.js Object Relational Mapping library. It currently supports
 MySQL and SQLite.
 
 
 ## Quick Start
 
-Get a new database connection.
-
-```javascript
+Get a new database connection for one of the supported adapters.
+```js
 var db = require('ormy')(
-  type: 'mysql',
+  adapter: 'mysql',
   host: 'localhost'
   port: 3306,
   user: 'root',
-  pass: 'my_password',
-  name: 'my_db'
+  pass: 'MY_PASSWORD',
+  name: 'MY_DATABASE'
 });
+```
 
+Define a model.
+```js
 var User = db.define({
   table: 'users',
   fields: {

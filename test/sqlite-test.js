@@ -3,17 +3,17 @@ var ormy = require(up + '/ormy');
 var Model = require(up + '/lib/model');
 
 describe('SQLite', function () {
-  var logger = {
+  var log = {
     error: mock.concat(),
     warn: mock.concat(),
     info: mock.concat(),
     log: mock.concat()
   };
   var db = ormy({
-    type: 'sqlite',
+    adapter: 'sqlite',
     path: ':memory:',
     name: 'test',
-    logger: logger
+    log: log
   });
   var Mock = db.define({
     table: 'mocks',
@@ -27,8 +27,6 @@ describe('SQLite', function () {
       money: 'money',
       enums: 'enum("this","is","important")'
     },
-    nameColumn: Model.underscored,
-    nameTable: Model.underscored,
     enableSync: false
   });
 
@@ -43,7 +41,7 @@ describe('SQLite', function () {
   it('should create a first record', function (done) {
     var expected = { name: 'what is this', number: 12, tiny: 1, big: 1, small: 1, big: 1, money: 10.20, enums: 'is', id: 1};
     Mock.save({ name: 'what is this', number: 12, tiny: 1, big: 1, small: 1, big: 1, money: 10.20, enums: 'is'}, function (err, item) {
-      is.null(err);
+      is.falsy(err);
       // delete created, modified, deleted columns since it is dynamic
       ['deleted', 'created', 'modified']
       .forEach(function (key) {

@@ -1,6 +1,6 @@
-var Database = require(__dirname + '/lib/Database');
-var Model = require(__dirname + '/lib/Model');
-var Field = require(__dirname + '/lib/Field');
+var Database = require(__dirname + '/lib/database');
+var Model = require(__dirname + '/lib/model');
+var Field = require(__dirname + '/lib/field');
 
 /**
  * The main API function accepts a configuration and returns a database.

@@ -85,7 +85,7 @@ We would like to thank all of the amazing people who use, support,
 promote, enhance, document, patch, and submit comments & issues.
 Ormy couldn't exist without you.
 
-Additionally, huge thanks go to [TUNE](http://www.tune.com) for employing
+Additionally, huge thanks go to [Goin’](https://goin.io) for employing
 and supporting [Ormy](http://lighter.io/ormy) project maintainers,
 and for being an epically awesome place to work (and play).
 

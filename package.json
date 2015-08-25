@@ -1,12 +1,12 @@
 {
   "name": "ormy",
-  "version": "1.0.0",
+  "version": "0.4.0",
   "description": "Easy data models",
   "dependencies": {
     "mysql": "2.4.2"
   },
   "devDependencies": {
-    "exam": "git+https://github.com/zerious/exam.git"
+    "exam": "0.3.0"
   },
   "keywords": [
     "ormy"
